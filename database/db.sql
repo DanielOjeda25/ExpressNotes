@@ -11,7 +11,7 @@ CREATE TABLE users(
 );
 
 ALTER TABLE users
-  ADD PRIMARY_KEY(id);
+  ADD PRIMARY KEY (id);
 
 ALTER TABLE users MODIFY id INT(11) NOT NULL AUTO_INCREMENT , AUTO_INCREMENT = 2;
 
@@ -21,7 +21,7 @@ DESCRIBE users;
 CREATE TABLE links(
   id INT(11) NOT NULL,
   title VARCHAR(150) NOT NULL,
-  ulr VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
   description TEXT,
   user_id INT(11),
   created_at timestamp NOT NULL DEFAULT current_timestamp,
