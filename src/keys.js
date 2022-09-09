@@ -1,6 +1,6 @@
 module.exports = {
   database: {
-    host: 'localgost',
+    host: 'localhost',
     user: 'root',
     password: '',
     database: 'database_links'
