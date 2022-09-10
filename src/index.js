@@ -33,7 +33,7 @@ app.use(
     secret: 'danistrymsql',
     resave: false,
     saveUninitialized: false,
-    store: new MySQLStore(database)
+    store: new MySQLStore(database),
   })
 )
 app.use(flash())
@@ -43,10 +43,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(passport.initialize())
 app.use(passport.session())
+
 // Global Variables
 app.use((req, res, next) => {
   app.locals.success = req.flash('success')
   app.locals.message = req.flash('message')
+  app.locals.user = req.user
   next()
 })
 // Routes
