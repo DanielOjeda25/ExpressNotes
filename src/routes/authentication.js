@@ -1,30 +1,44 @@
 const express = require('express')
 const passport = require('passport')
 const router = express.Router()
+
+const { isLoggedIn, isNotLoggedIn } = require('../lib/auth')
+
 // esta ruta es para renderizar el formulario
-router.get('/signup', (req, res) => {
+router.get('/signup', isNotLoggedIn, (req, res) => {
   res.render('auth/signup')
 })
 // esta ruta es para enviar los datos del form
 router.post(
   '/signup',
+  isNotLoggedIn,
   passport.authenticate('local.signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
-    failureFlash: true
+    failureFlash: true,
   })
 )
-router.get('/signin', (req, res) => {
+router.get('/signin', isNotLoggedIn, (req, res) => {
   res.render('auth/signin')
 })
-router.post('/signin', (req, res, next) => {
+router.post('/signin', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local.signin', {
     successRedirect: '/profile',
     failureRedirect: '/signin',
-    failureFlash: true
+    failureFlash: true,
   })(req, res, next)
 })
-router.get('/profile', (req, res) => {
-  res.send('LLEGASTE')
+router.get('/profile', isLoggedIn, (req, res) => {
+  res.render('profile')
+})
+router.get('/logout', isNotLoggedIn, (req, res, next) => {
+  req.logout((err) => {
+    if (err) {
+      return next(err)
+    }
+    // if you're using express-flash
+    req.flash('success', 'session terminated')
+    res.redirect('/signin')
+  })
 })
 module.exports = router
