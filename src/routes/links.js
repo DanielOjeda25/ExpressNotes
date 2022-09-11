@@ -15,16 +15,16 @@ router.post('/add', isLoggedIn, async (req, res) => {
     title,
     url,
     description,
+    user_id: req.user.id
   }
   await pool.query('INSERT INTO links set ?', [newLink])
   req.flash('success', 'Links saved successfully')
-
   res.redirect('/links')
 })
 
 // esta ruta trare redirecciona adonde estaran los links
 router.get('/', isLoggedIn, async (req, res) => {
-  const links = await pool.query('SELECT * FROM links')
+  const links = await pool.query('SELECT * FROM links WHERE user_id = ?', [req.user.id])
   res.render('links/list', { links })
 })
 // esta ruta eliminara el link usando el id
