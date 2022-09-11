@@ -15,7 +15,7 @@ router.post(
   passport.authenticate('local.signup', {
     successRedirect: '/profile',
     failureRedirect: '/signup',
-    failureFlash: true,
+    failureFlash: true
   })
 )
 router.get('/signin', isNotLoggedIn, (req, res) => {
@@ -25,13 +25,13 @@ router.post('/signin', isNotLoggedIn, (req, res, next) => {
   passport.authenticate('local.signin', {
     successRedirect: '/profile',
     failureRedirect: '/signin',
-    failureFlash: true,
+    failureFlash: true
   })(req, res, next)
 })
 router.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile')
 })
-router.get('/logout', isNotLoggedIn, (req, res, next) => {
+router.get('/logout', isLoggedIn, (req, res, next) => {
   req.logout((err) => {
     if (err) {
       return next(err)
