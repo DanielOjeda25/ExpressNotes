@@ -1,6 +1,10 @@
 <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
-  <div class='container'>
-    <a class='navbar-brand' href='/'>Express Links</a>
+  <div class='container-fluid w-100  rounded bg-secondary'>
+    <a class='navbar-brand expres' href='/'><lord-icon
+        src='https://cdn.lordicon.com/rfbqeber.json'
+        style='width:40px;height:40px'
+      >
+      </lord-icon>Express Links</a>
     <button
       class='navbar-toggler'
       type='button'
@@ -24,7 +28,7 @@
               data-bs-toggle='dropdown'
               aria-expanded='false'
             >
-              Links
+              <i class="fa-solid fa-link m-1"></i>Links
             </a>
             <ul class='dropdown-menu' aria-labelledby='navbarDropdown'>
               <li><a class='dropdown-item' href='/links'>All Links</a></li>
@@ -35,17 +39,25 @@
             </ul>
           </li>
           <li class='nav-item'>
-            <a href='/profile' class='nav-link'>Profile</a>
+            <div class="icons">
+            <a href='/profile' class='nav-link'><i class="fa-regular fa-user m-1"></i>Profile</a>
+            </div>
           </li>
           <li class='nav-item'>
-            <a href='/logout' class='nav-link'>Logout</a>
+            <div>
+            <a href='/logout' class='nav-link'><i class="fa-solid fa-right-from-bracket m-1"></i>Logout</a>
+            </div>
           </li>
         {{else}}
           <li class='nav-item'>
-            <a href='/signin' class='nav-link'>SignIn</a>
+            <div>
+            <a href='/signin' class='nav-link'><i class="fa-solid fa-right-from-bracket"></i>SignIn</a>
+            </div>
           </li>
           <li class='nav-item'>
-            <a href='/signup' class='nav-link'>SignUp</a>
+            <div>
+            <a href='/signup' class='nav-link'><i class="fa-regular fa-right-to-bracket"></i>SignUp</a>
+            </div>
           </li>
         {{/if}}
 
