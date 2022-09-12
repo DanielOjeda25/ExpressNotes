@@ -1,10 +1,11 @@
-*{
+* {
   margin: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  background-color: #f5f6f5;
+  background-color: #202124;
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
@@ -36,20 +37,21 @@ body {
   .masthead h1 {
     font-size: 5.5rem;
   }
-  
+
 }
 
 /*NavBar Styles*/
 i {
-  color: antiquewhite;
+  color: white;
 }
-.nav-item:hover{
-  transition: all .3s ease;
-  font-size: 1.2rem;
+
+.nav-item:hover {
+  transition: all .2s ease-in-out;
+  font-size: 1.1rem;
 }
 
 /*Index Styles*/
-.float { 
+.float {
   animation-name: float;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -59,16 +61,60 @@ i {
 }
 
 @keyframes float {
-  0% { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 15px); }
-  100%   { transform: translate(0, -0px); }   
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 15px);
+  }
+
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
-.button-let{
+.button-let {
   background-color: #7c7c7c;
   outline: none;
   border: none;
 }
-.button-let:hover{
+
+.button-let:hover {
   background-color: #959595;
+}
+
+/*Profile Styles*/
+.profile {
+  font-size: 2.5rem;
+}
+
+.profile-container {
+  background-color: #959595;
+  color: #f5f5f5;
+ 
+}
+
+.profile-container a {
+  background-color: #7c7c7c;
+  border: #959595;
+}
+
+.profile-container a:hover {
+  background-color: #838383;
+}
+
+.profile-container i:hover {
+  color: greenyellow;
+}
+
+/*List Links Styles*/
+.link{
+  text-decoration: none;
+  
+}
+.link-t{
+  font-weight: 800;
+  color: #0075ff;
+  font-size: 1.5rem;
 }
