@@ -1,19 +1,20 @@
 <div class='container p-4'>
   <div class='row'>
     <div class='col-md-4 mx-auto'>
-      <div class='card text-center'>
+      <div class='card text-center contai'>
         <div class='card-header'>
           <h3>Sign In</h3>
         </div>
-        <div class='card-body'>
-          <img src="/img/logo.png" alt="logo" class="card-img-top mx-auto m-2 rounded-circle w-50">
+        <div class='card-body '>
+          <img src="/img/avatar.svg" alt="logo" class="card-img-top mx-auto m-2 rounded-circle w-50">
           <form action='/signin' method='POST'>
             <div class='form-group mb-3'>
               <input
                 type='text'
                 name='username'
-                placeholder='User Name'
+                placeholder='username'
                 class='form-control'
+                required
               />
             </div>
             <div class='form-group mb-3'>
@@ -22,10 +23,11 @@
                 name='password'
                 placeholder='password'
                 class='form-control'
+                required
               />
             </div>
             <div class='form-group d-grid gap-2 col-6 mx-auto'>
-              <button class='btn btn-success'>SignIn</button>
+              <button class='btn btn-success'>Sign In<i class="fa-solid fa-right-to-bracket m-2"></i></button>
             </div>
           </form>
         </div>

@@ -118,3 +118,36 @@ i {
   color: #0075ff;
   font-size: 1.5rem;
 }
+
+/*SignIn and SignUp styles*/
+.contai h3{
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  color: #f5f5f5;
+}
+.contai{
+  background-color: #7c7c7c;
+}
+.btn-success{
+  background-color: #00bd78;
+  border: none;
+  outline: none;
+}
+.btn-success:hover{
+  background-color: #00bb93;
+}
+.aderir{
+  font-weight: 500;
+  font-size: 1rem;
+  color: #f5f5f5;
+}
+.create{
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #0075ff;
+}
+.create:hover{
+  color: #00a5ff;
+}
